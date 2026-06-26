@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe Party</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="intro-panel" aria-labelledby="game-title">
+      <p class="eyebrow">tiny strategy, big sparkle</p>
+      <h1 id="game-title">Tic-Tac-Toe Party</h1>
+      <p class="tagline">Drop your mark, steal the line, and keep the streak glowing.</p>
+
+      <div class="scoreboard" aria-label="Scoreboard">
+        <article class="score-card player-x">
+          <span class="score-label" id="score-x-label">Player X</span>
+          <strong id="score-x">0</strong>
+        </article>
+        <article class="score-card draws">
+          <span class="score-label">Draws</span>
+          <strong id="score-draw">0</strong>
+        </article>
+        <article class="score-card player-o">
+          <span class="score-label" id="score-o-label">Bot O</span>
+          <strong id="score-o">0</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="game-card" aria-label="Tic tac toe game">
+      <div class="mode-switch" aria-label="Game mode">
+        <button class="mode-button active" type="button" data-mode="bot" aria-pressed="true">Play bot</button>
+        <button class="mode-button" type="button" data-mode="friend" aria-pressed="false">2 players</button>
+      </div>
+
+      <div class="difficulty-panel" id="difficulty-panel" aria-label="Bot difficulty">
+        <button class="difficulty-button active" type="button" data-difficulty="easy" aria-pressed="true">
+          <span>Easy</span>
+          <small>cozy</small>
+        </button>
+        <button class="difficulty-button" type="button" data-difficulty="medium" aria-pressed="false">
+          <span>Medium</span>
+          <small>tricky</small>
+        </button>
+        <button class="difficulty-button" type="button" data-difficulty="hard" aria-pressed="false">
+          <span>Hard</span>
+          <small>perfect</small>
+        </button>
+      </div>
+
+      <div class="status-row">
+        <div class="turn-chip" id="turn-chip" aria-hidden="true">X</div>
+        <div>
+          <p id="status" role="status" aria-live="polite">Player X's turn</p>
+          <p id="round-note">Easy bot is ready to play.</p>
+        </div>
+      </div>
+
+      <div id="game-board" aria-label="Game board">
+        <button class="cell" data-index="0" aria-label="Cell 1"></button>
+        <button class="cell" data-index="1" aria-label="Cell 2"></button>
+        <button class="cell" data-index="2" aria-label="Cell 3"></button>
+        <button class="cell" data-index="3" aria-label="Cell 4"></button>
+        <button class="cell" data-index="4" aria-label="Cell 5"></button>
+        <button class="cell" data-index="5" aria-label="Cell 6"></button>
+        <button class="cell" data-index="6" aria-label="Cell 7"></button>
+        <button class="cell" data-index="7" aria-label="Cell 8"></button>
+        <button class="cell" data-index="8" aria-label="Cell 9"></button>
+      </div>
+
+      <div class="actions">
+        <button id="reset" class="primary-button" type="button">New round</button>
+        <button id="clear-score" class="ghost-button" type="button">Clear scores</button>
+      </div>
+
+      <p class="streak" id="streak">Win streak: 0</p>
+      <div class="celebration" id="celebration" aria-hidden="true"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
